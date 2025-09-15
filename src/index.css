@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+*{
+  box-sizing: border-boxs;
+}
+#root {
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+
+@layer utilities {
+  .grid-layout{
+    display: grid;
+    grid-template-columns: 1fr 70% 1fr;
+    grid-area: 
+    ". hero ."
+    ". data .";
+  }
+
+  .title-glow{
+    text-shadow: 0px 0px 14px rgba(255,249,184,0.25),
+    0px 0px 33px rgba(255,249,184,0.13),
+    0px 0px 40px rgba(255,249,184,0.04),
+    0px 0px 11px rgba(255, 255, 255, 0.219);
+  }
+
+  .line-gradient-to-right{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-image: var(--gradient-opacitiy-to-right);
+  }
+
+  .line-gradient-to-top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-image: var(--gradient-opacitiy-to-top);
+  }
+}
+
+@theme{
+  --color-primary: #0C0C0C;
+
+  --color-white-50: #ffffff1a;
+
+  --font-gloock: "Gloock", Georgia, 'Times New Roman', Times, serif;
+
+  --gradient-primarywhite: linear-gradient(180deg, #ffffff, #B7B7B7);
+  --gradient-opacitiy-to-top: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .5) 15%, rgba(255, 255, 255, .5) 85%, rgba(255, 255, 255, 0) 100%);
+  --gradient-opacitiy-to-right: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .5) 15%, rgba(255, 255, 255, .5) 85%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+
+
+@font-face {
+  font-family: "Gloock";
+  src: url("/src/assets/fonts/Gloock/Poppins.woff2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
