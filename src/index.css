@@ -58,6 +58,7 @@
   --color-white-50: #ffffff1a;
 
   --font-gloock: "Gloock", Georgia, 'Times New Roman', Times, serif;
+  --font-sfpro: "SFPro", sans-serif;
 
   --gradient-primarywhite: linear-gradient(180deg, #ffffff, #B7B7B7);
   --gradient-opacitiy-to-top: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .5) 15%, rgba(255, 255, 255, .5) 85%, rgba(255, 255, 255, 0) 100%);
@@ -65,11 +66,53 @@
 }
 
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Para Firefox */
+html {
+  scrollbar-width: none; /* Oculta la barra */
+}
+
+/* Para IE y Edge Legacy */
+html {
+  -ms-overflow-style: none; 
+}
+
 
 
 @font-face {
   font-family: "Gloock";
   src: url("/src/assets/fonts/Gloock/Poppins.woff2") format("truetype");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Ultralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Semibold.otf') format('opentype');
+  font-weight: 600;
   font-style: normal;
 }
