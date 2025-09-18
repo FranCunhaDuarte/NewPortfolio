@@ -89,7 +89,7 @@ const Footer = () => {
                             <h3 className='text-2xl font-black'>SOCIAL MEDIA</h3>
                             <ul className='flex flex-col items-start gap-1.5'>
                                 <ArrowText href='https://www.linkedin.com/in/francocunhaduarte/' label='LinkedIn' />
-                                <ArrowText href='https://github.com/FranCunhaDuarte/' label='Github' />
+                                <ArrowText href='https://github.com/FranCunhaDuarte/' label='GitHub' />
                             </ul>
                         </div>
                     </div>

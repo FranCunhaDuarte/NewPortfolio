@@ -109,6 +109,13 @@ html {
 
 @font-face {
   font-family: 'SFPro';
+  src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro';
   src: url('/src/assets/fonts/SFPro/SF-Pro-Text-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
