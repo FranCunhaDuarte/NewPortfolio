@@ -64,19 +64,19 @@ const Footer = () => {
 
   return (
     <>
-        <footer className='w-full h-[400px] sticky bottom-0 bg-primary z-[10] flex flex-col overflow-hidden'>
-            <div className='grid-layout items-center h-full text-white font-sfpro'>
+        <footer className='w-full h-[650px] xl:h-[400px] sticky bottom-0 bg-primary z-[10] flex flex-col overflow-hidden'>
+            <div className='grid xl:grid-cols-[1fr_70%_1fr] items-center h-full text-white font-sfpro'>
                 <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(50%+500px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
                 <div></div>
-                <div className='flex items-center justify-between w-[95%] mx-auto'>
-                    <div className='flex flex-col items-start w-[300px] gap-3'>
+                <div className='flex flex-col xl:flex-row items-center justify-between w-[70%] xl:w-[95%] mx-auto h-full'>
+                    <div className='flex flex-col items-start gap-3 xl:w-[300px]'>
                         <h3 className='text-2xl font-black'>ABOUT ME</h3>
-                        <p className='text-start text-[.9rem] text-[#b8b8b8]'>I’m a {age}-year-old junior frontend developer from Mar del Plata, Argentina. I studied at UNICEN, and my self-taught mindset drives my growth.</p>
+                        <p className='text-start text-[.9rem] text-[#b8b8b8] text-pretty'>I’m a {age}-year-old junior frontend developer from Mar del Plata, Argentina. I studied at UNICEN, and my self-taught mindset drives my growth.</p>
                     </div>
-                    <div className='flex flex-col items-start gap-10'>
-                        <div>
+                    <div className='flex flex-col items-start xl:items-start gap-10 w-full xl:w-min'>
+                        <div className='order-2 xl:order-1 w-full xl:w-min'>
                             <div className='flex'>
-                                <div className='h-10 bg-[#2F2F2F] border border-white-50 items-center flex px-4 rounded-l-[10px]'>
+                                <div className='h-10 w-full xl:w-min bg-[#2F2F2F] border border-white-50 items-center flex justify-center px-4 rounded-l-[10px]'>
                                     <a href={`mailto:${correo}`} className='cursor-pointer' >{correo}</a>
                                 </div>
                                 <div id='copy-email' onClick={handleCopy} className='cursor-pointer flex justify-center items-center h-10 w-12 bg-[#212121] border border-l-0 border-white-50 rounded-r-[10px]'>
@@ -85,7 +85,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex flex-col items-start gap-3'>
+                        <div className='flex flex-col items-start gap-3 order-1 xl:order-2'>
                             <h3 className='text-2xl font-black'>SOCIAL MEDIA</h3>
                             <ul className='flex flex-col items-start gap-1.5'>
                                 <ArrowText href='https://www.linkedin.com/in/francocunhaduarte/' label='LinkedIn' />
