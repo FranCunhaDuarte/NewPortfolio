@@ -9,7 +9,7 @@
 }
 
 *{
-  box-sizing: border-boxs;
+  box-sizing: border-box;
 }
 #root {
   padding: 0 !important;
@@ -21,9 +21,6 @@
   .grid-layout{
     display: grid;
     grid-template-columns: 1fr 70% 1fr;
-    grid-area: 
-    ". hero ."
-    ". data .";
   }
 
   .title-glow{
