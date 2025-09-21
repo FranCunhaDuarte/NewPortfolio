@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger) 
 
 const Project = ({color = 'gray', name = "undefined", image}) => {
 
@@ -40,20 +44,72 @@ const Project = ({color = 'gray', name = "undefined", image}) => {
       lightShadow: "#7D7D7D"
     }
   }
+  
+  const pallete = COLORS[color] || COLORS.gray
+
+
 
   const [hover,setHover] = useState(false)
+  const [isMobile,setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => setIsMobile(window.innerWidth <= 1000)
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  },[])
+
+  useEffect(() =>{
+    if(isMobile){
+      return setHover(true)
+    }
+    return setHover(false)
+  },[isMobile])
 
 
-  const pallete = COLORS[color] || COLORS.gray
+
+
+  const shine = useRef(null)
+  const shineTween = useRef(null)  
+  const shineAnimation = () =>{
+    if (shineTween.current && shineTween.current.isActive()) {
+      return;
+    }
+    
+    shineTween.current = gsap.fromTo(shine.current,
+          { x: 0 },
+          { x: '1600', duration: 1, ease: 'none'}
+      )
+  }
+
+  const onMouseEnter = () =>{
+    setHover(true)
+    shineAnimation()
+  }
+
+  const onMouseLeave = () =>{
+    setHover(false)
+  }
+
+
+  const projectCard = useRef(null)
+  useEffect(() =>{
+    gsap.fromTo(projectCard.current,
+      { opacity: 0, y: 150 },
+      { scrollTrigger: projectCard.current, opacity: 1, y: 0, duration: 1 }
+    )
+  },[])
+
 
   return (
     <>
-      <div className='w-[95%] max-w-[1200px] md:h-[750px] aspect-square xl:aspect-video mx-auto relative'>
+      <div className='w-[95%] max-w-[1200px] md:h-[750px] aspect-square xl:aspect-video mx-auto relative' ref={projectCard}>
         <div className='absolute right-8 top-[-15px] z-30 w-16 h-3.5 before:inline-block before:bg-[#1C1C1C] before:w-16 before:top-0 before:left-0 before:h-3.5 before:rounded-t-2xl before:border before:border-[#484848] '>
           <div className='absolute top-[0px] -z-10 left-[50%] translate-x-[-50%] w-10 h-5 rounded-[7px] transition-all duration-500 ease-in-out' style={{backgroundColor: hover ? pallete.lightColor : '#ffffff95', boxShadow: hover ? `0px -4px 75px 31px ${pallete.lightShadow}35,0px -4px 32px 10px ${pallete.lightShadow}35` : `0px -4px 75px 31px ${pallete.lightShadow}00,0px -4px 32px 10px ${pallete.lightShadow}00`}}></div>
         </div>
-        <div className='absolute top-0 left-0 w-full h-full bg-radial from-[#ffffff20] to-[#ffffff00] scale-[1.3] blur-2xl'></div>
-        <a href='' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}  tabIndex={0} role={`project-${name}`} className='inline-block z-50 cursor-pointer relative w-full h-full border border-[#484848] rounded-[1.6rem] p-2.5 bg-[#1C1C1C] overflow-hidden after:absolute after:h-[120%] after:w-[150px] after:bg-white after:opacity-10 after:top-[50%] after:translate-y-[-50%] after:left-[20%] after:rotate-12' style={{boxShadow: '0px 0px 40px 14px rgba(0,0,0,0.26)'}}>
+        <div className='pointer-events-none absolute top-0 left-0 w-full h-full bg-radial from-[#ffffff20] to-[#ffffff00] scale-[1.3] blur-2xl'></div>
+        <a href='' onMouseEnter={() => onMouseEnter()} onMouseLeave={() => onMouseLeave()}  tabIndex={0} role={'link'} className='inline-block z-50 cursor-pointer relative w-full h-full border border-[#484848] rounded-[1.6rem] p-2.5 bg-[#1C1C1C] overflow-hidden' style={{boxShadow: '0px 0px 40px 14px rgba(0,0,0,0.26)'}}>
+          <div ref={shine} className='absolute h-[120%] w-[150px] bg-white opacity-10 top-[50%] translate-y-[-50%] -left-[20%] rotate-12 z-[60]'></div>
           <div className='w-full h-full border border-[#767676] rounded-[1rem] relative overflow-hidden bg-linear-to-b from-[#252525] to-[#101010]'>
             <div className='w-full h-full absolute top-0 left-0 transition-opacity duration-500 ease-in-out' style={ {backgroundImage: `radial-gradient(circle at 50% 0, ${pallete.bgGradient2}, #0000 100%), radial-gradient(circle at 50% 0, ${pallete.bgGradient1}, #0000 100%)`, opacity: hover ? '1' : '0'}}></div>
             <div className='w-full h-full flex flex-col p-10'>
