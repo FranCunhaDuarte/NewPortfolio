@@ -13,18 +13,21 @@ const Title = () => {
         if(!title1) return
         if(!title2) return
 
-        gsap.fromTo(title1Line.current,{scaleX:0},{scaleX:1,duration: 1, ease:'power2', delay:.5})
-        gsap.fromTo(title2Line.current,{scaleY:0},{scaleY:1,duration: 1, ease:'power2', delay:1.3})
+        const tl = gsap.timeline()
 
-        gsap.fromTo(title1.current,{yPercent: -100}, {yPercent: 0, duration: 1, ease: "back.out", delay: 1})
-        gsap.fromTo(title2.current,{xPercent: -120}, {xPercent: 0, duration: 1, ease: "back.out(1)", delay: 1.9})
+        tl.fromTo(title1Line.current,{scaleX:0},{scaleX:1,duration: 1, ease:'power2', delay:.5})
+        .fromTo(title1.current,{yPercent: -100}, {yPercent: 0, duration: 1, ease: "back.out", delay: -.4})
+        .fromTo(title2Line.current,{scaleY:0},{scaleY:1,duration: 1, ease:'power2', delay:-.4})
+        .fromTo(title2.current,{xPercent: -120}, {xPercent: 0, duration: 1, ease: "back.out(1)", delay: -.4})
+        .to(title1Line.current,{scaleX: 0, duration: 1, ease:'power2', delay: -1.5})
+        .to(title2Line.current,{scaleY: 0, duration: 1, ease:'power2', delay: -.3})
 
     },[])
 
   return (
     <>
       <div className='flex flex-col items-start mx-auto w-fit pt-20 overflow-y-hidden'>
-        <div className='overflow-hidden px-7 pb-3 relative'><div ref={title1Line} className='line line-gradient-to-right'></div><span ref={title1} className='title-glow inline-block xl:text-[8vw] text-[10.5vw] italic font-gloock skew-x-[-15deg] bg-clip-text text-transparent' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>Creativity Knows</span></div>
+        <div className='overflow-hidden px-7 pb-3 relative'><div ref={title1Line} className='line line-gradient-to-right top-0'></div><span ref={title1} className='title-glow inline-block xl:text-[8vw] text-[10.5vw] italic font-gloock skew-x-[-15deg] bg-clip-text text-transparent' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>Creativity Knows</span></div>
         <div className='overflow-hidden px-7 pr-10 relative'><div ref={title2Line} className='line line-gradient-to-top'></div><span ref={title2} className='title-glow inline-block xl:text-[8vw] text-[10.5vw] italic font-gloock skew-x-[-15deg] bg-clip-text text-transparent' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>No Limits</span></div>
       </div>
     </>

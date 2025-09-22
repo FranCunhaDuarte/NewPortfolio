@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
 
-  const [atTop,setAtTop] = useState(false)
+  const [atTop,setAtTop] = useState(true)
   const [show,setShow] = useState(true)
   const [lastScroll,setLastScroll] = useState(0)
 

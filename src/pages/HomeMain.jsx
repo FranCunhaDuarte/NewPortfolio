@@ -12,9 +12,9 @@ const HomeLayout = () => {
 
   const [locationX,setLocationX] = useState(0)
   
-  let activeElement = refPorjects.current
-
+  
   useEffect(() =>{
+    let activeElement = refPorjects.current
 
     if(location.pathname == '/projects'){
       activeElement = refPorjects.current
