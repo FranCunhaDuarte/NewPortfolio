@@ -14,8 +14,8 @@ const LinkShineExternal = ({link = '',label = 'Undefined'}) => {
         }
         
         shineTween.current = gsap.fromTo(shine.current,
-            { x: 0 },
-            { x: 200, duration: 1, ease: 'none'}
+            { x: -20 },
+            { x: shine.current.parentElement.offsetWidth + 20, duration: 1, ease: 'none'}
         )
     }
 
