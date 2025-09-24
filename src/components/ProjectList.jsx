@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Project from '../components/Project'
+import { Link } from 'react-router-dom'
 
 const ProjectList = () => {
 
-  const projects = [
-    {color: 'red', name: 'luccianos', image: 'luccianos'},
-    {color: 'amber', name: 'Portfolio', image: 'portfolio'},
-    {color: 'green', name: 'positivus', image: 'positivus'},
-    {color: 'gray', name: 'Fendyan S.A.', image: 'fendyansa'},
-    {color: 'blue', name: 'Porto Novo', image: 'portonovobarano'},
-  ]
+  const [dataProjects, setDataProjects] = useState([])
+
+  useEffect(() =>{
+    fetch('/data/projects.json')
+      .then((res) => res.json())
+      .then((data) => setDataProjects(data))
+  },[])
 
   return (
     <>
         <div className='flex flex-col items-center justify-center gap-28'>
-            {projects.map((project) => {
-              return <Project color={project.color} name={project.name} image={project.image}/>
+            {dataProjects.map((project) => {
+              return <Link key={project.id} to={`/project/${project.id}`}><Project color={project.color} name={project.name} image={project.image}/></Link>
             })}
         </div>
     </>

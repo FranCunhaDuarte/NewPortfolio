@@ -37,14 +37,19 @@ const HomeLayout = () => {
   return (
     <>
         <main className='grid xl:grid-cols-[1fr_70%_1fr] bg-primary overflow-hidden border-b border-white-50 z-20 relative'>
+            {/* Light top */}
             <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none top-0 left-1/2 -translate-x-1/2 translate-y-[calc(-50%-200px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
             <div></div>
             <div className='relative'>
+              {/* Side lines effect */}
               <div className='relative'>
+                {/* Shiniest bar */}
                 <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 left-0' style={{backgroundImage: 'var(--gradient-opacitiy-to-top)'}}></div>
                 <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 right-0' style={{backgroundImage: 'var(--gradient-opacitiy-to-top)'}}></div>
+                {/* Darker bar */}
                 <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 left-0 bg-white-50'></div>
                 <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 right-0 bg-white-50'></div>
+                {/* Hero */}
                 <Hero />
               </div>
               <div className='pb-14 relative bg-primary'>

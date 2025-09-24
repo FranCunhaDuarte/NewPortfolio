@@ -1,15 +1,16 @@
 import { useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
-import HomePage from './pages/HomeMain'
+import HomePage from './pages/HomeLayout'
 import Lenis from 'lenis'
 import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
-import NotFoundPage from './pages/NotFoundPage'
+import NotFoundPage from './pages/NotFoundLayout'
 import ProjectList from './components/ProjectList'
-import HomeLayout from './pages/HomeMain'
-import HomeMain from './pages/HomeMain'
+import HomeLayout from './pages/HomeLayout'
+import HomeMain from './pages/HomeLayout'
 import AboutMe from './components/AboutMe'
+import ProjectPage from './pages/ProjectLayout'
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full h-full absolute top-0 left-0 z-50 pointer-events-none bg-repeat opacity-15' style={{backgroundImage: "url(./media/images/noise.png)"}}></div>
+      <div className='w-full h-full absolute top-0 left-0 z-[250] pointer-events-none bg-repeat opacity-15' style={{backgroundImage: "url(/media/images/noise.png)"}}></div>
       <Header />
       <Routes>
 
@@ -46,6 +47,9 @@ function App() {
           <Route path='projects' element={<ProjectList />} />
           <Route path='aboutme' element={<AboutMe />} />
         </Route>
+
+        {/* Dinamic project route */}
+        <Route path='/project/:id' element={<ProjectPage />} />
 
         {/* Not Found Page */}
         <Route path='*' element={<NotFoundPage />} />

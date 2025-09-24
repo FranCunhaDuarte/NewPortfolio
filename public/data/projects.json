@@ -1,0 +1,47 @@
+[
+  { 
+    "id": 1, 
+    "color": "red", 
+    "name": "luccianos", 
+    "image": "luccianos", 
+    "websiteUrl": "https://luccianos-clone.vercel.app/", 
+    "repositoryUrl": "https://github.com/FranCunhaDuarte/Luccianos-Clone",
+    "techs": ["html5","css","javascript","react","git"]
+  },
+  { 
+    "id": 2, 
+    "color": "amber", 
+    "name": "portfolio", 
+    "image": "portfolio", 
+    "websiteUrl": "https://francunhaduarte.vercel.app/", 
+    "repositoryUrl": "https://github.com/FranCunhaDuarte/Portfolio",
+    "techs": ["html5","css","tailwind","javascript","react","figma","git"]
+  },
+  { 
+    "id": 3, 
+    "color": "green", 
+    "name": "positivus", 
+    "image": "positivus", 
+    "websiteUrl": "https://francunhaduarte.github.io/Positivus/", 
+    "repositoryUrl": "https://github.com/FranCunhaDuarte/Positivus",
+    "techs": ["html5","css","javascript","figma","git"]
+  },
+  { 
+    "id": 4, 
+    "color": "gray", 
+    "name": "fendyan s.a.", 
+    "image": "fendyansa", 
+    "websiteUrl": "https://fendyansa.com/", 
+    "repositoryUrl": "https://github.com/FranCunhaDuarte/FendyanSa",
+    "techs": ["html5","css","javascript","php","figma","git"]
+  },
+  { 
+    "id": 5, 
+    "color": "blue", 
+    "name": "porto novo", 
+    "image": "portonovobarano", 
+    "websiteUrl": "", 
+    "repositoryUrl": "https://github.com/FranCunhaDuarte/PortoNovoBarano",
+    "techs": ["html5","css","javascript","php","figma","git"]
+  }
+]

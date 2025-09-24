@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "color": "#FF6200",
+    "techName": "html5",
+    "techDesc": "Structure & semantics",
+    "icon": "Html5"
+  },
+  {
+    "id": 2,
+    "color": "#006FFF",
+    "techName": "tailwind",
+    "techDesc": "Utility-first styling",
+    "icon": "Tailwind"
+  },
+  {
+    "id": 3,
+    "color": "#1697f5",
+    "techName": "css",
+    "techDesc": "Styling & layouts",
+    "icon": "Css"
+  },
+  {
+    "id": 4,
+    "color": "#fca708",
+    "techName": "javascript",
+    "techDesc": "Logic & interactivity",
+    "icon": "Javascript"
+  },
+  {
+    "id": 5,
+    "color": "#009DFF",
+    "techName": "react",
+    "techDesc": "UI & state management",
+    "icon": "ReactIcon"
+  },
+  {
+    "id": 6,
+    "color": "#DD2D2D",
+    "techName": "figma",
+    "techDesc": "Design & prototyping",
+    "icon": "Figma"
+  },
+  {
+    "id": 7,
+    "color": "#ff3f24",
+    "techName": "git",
+    "techDesc": "Versioning & collaboration",
+    "icon": "Git"
+  },
+  {
+    "id": 8,
+    "color": "#0066FF",
+    "techName": "python - fastapi",
+    "techDesc": "API & auth",
+    "icon": "Python"
+  },
+  {
+    "id": 9,
+    "color": "#126FE8",
+    "techName": "postgresql",
+    "techDesc": "Data & reliability",
+    "icon": "Postgresql"
+  },
+  {
+    "id": 10,
+    "color": "#FF6200",
+    "techName": "java",
+    "techDesc": "OOP & enterprise",
+    "icon": "Java"
+  },
+  {
+    "id": 11,
+    "color": "#3CDD2D",
+    "techName": "mongodb",
+    "techDesc": "Documents & scalability",
+    "icon": "MongoDB"
+  },
+  {
+    "id": 12,
+    "color": "#8359E4",
+    "techName": "php",
+    "techDesc": "Backend & web apps",
+    "icon": "Php"
+  }
+]
