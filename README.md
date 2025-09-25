@@ -1,12 +1,83 @@
-# React + Vite
+# 🌐 Portfolio - Franco Cunha Duarte
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es mi **portfolio personal**, desarrollado para mostrar mis proyectos, experiencia y habilidades en desarrollo web.  
+El objetivo es contar con un espacio moderno, rápido y responsive donde centralizar mi trabajo como desarrollador.
 
-Currently, two official plugins are available:
+🌐 **Deploy en Vercel:** [Portfolio](https://francunhaduarte.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React — Librería para la construcción de interfaces
+- 🎨 TailwindCSS — Framework de estilos para un diseño limpio y moderno
+- 🧩 React Router DOM — Navegación interna
+- 💚 GSAP — Animaciones fluidas
+- 🌐 Vercel — Deploy y hosting
+- 📝 HTML5 — Estructura semántica y moderna
+- 🎨 CSS3 — Estilos y personalización visual
+- 🖌️ Figma — Diseño y prototipado de interfaces
+- 🔧 Git — Control de versiones y trabajo colaborativo
+
+
+---
+
+## 🚀 Cómo Empezar
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/FranCunhaDuarte/Portfolio.git
+cd Portfolio
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Ejecutar servidor de desarrollo
+```bash
+npm run dev
+```
+
+### 4. Abrir en el navegador
+```
+http://localhost:5173
+```
+
+> ⚠️ Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
+
+---
+
+## 📁 Estructura del Proyecto
+```
+📦 src
+ ┣ 📂components   # Componentes reutilizables (Navbar, Footer, etc.)
+ ┣ 📂pages        # Páginas principales (Home, About, Projects, Contact)
+ ┣ 📂assets       # Imágenes, fuentes, íconos
+ ┣ 📂styles       # Estilos globales
+ ┗ 📜 App.jsx     # Configuración principal y rutas
+```
+
+---
+
+## ✨ Características del Portfolio
+
+- Animaciones modernas con GSAP 🎞️  
+- Navegación fluida sin recargas ⚡  
+- Diseño 100% responsive 📱💻  
+- UI limpia y minimalista  
+
+---
+
+## 📬 Contacto
+
+- 📧 Email: francunhaduartejobs@gmail.com  
+- 💼 LinkedIn: [linkedin.com/in/tuusuario](https://www.linkedin.com/in/francocunhaduarte/)  
+- 🐙 GitHub: [github.com/FranCunhaDuarte](https://github.com/FranCunhaDuarte)  
+
+---
+
+## 🧊 Créditos
+
+Este proyecto fue desarrollado con fines personales y profesionales.  
