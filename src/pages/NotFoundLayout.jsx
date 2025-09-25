@@ -6,8 +6,7 @@ import LinkShineExternal from '../components/LinkShineExternal'
 const NotFoundPage = () => {
   return (
     <>
-        <div className='bg-primary w-screen h-screen flex items-center justify-center flex-col text-white relative overflow-hidden'>
-            <div className='w-full h-full absolute top-0 left-0 z-50 pointer-events-none bg-repeat opacity-15' style={{backgroundImage: "url(./media/images/noise.png)"}}></div>
+        <main className='bg-primary w-screen h-screen flex items-center justify-center flex-col text-white relative overflow-hidden z-20 border-b border-white-50'>
             <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none top-0 left-1/2 -translate-x-1/2 translate-y-[calc(-50%-500px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
             <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(50%+500px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
             <h1 className='text-8xl font-sfpro font-black'>HOW DO YOU <br /> EVEN GET IN HERE?</h1>
@@ -22,7 +21,7 @@ const NotFoundPage = () => {
             <Link to={'/'}>
                 <LinkShineExternal label='Go Back Home' />
             </Link>
-        </div>
+        </main>
     </>
   )
 }
