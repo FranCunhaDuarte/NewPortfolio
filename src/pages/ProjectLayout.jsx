@@ -5,6 +5,7 @@ import TechBar from '../components/TechBar';
 
 // Icons SVG
 import * as Icons from '../assets/svg/Techs.jsx';
+import LinkShineExternal from '../components/LinkShineExternal.jsx';
 
 const ProjectLayout = () => {
 
@@ -62,9 +63,9 @@ const ProjectLayout = () => {
 
     const tl = gsap.timeline()
 
-    tl.fromTo(titleLine.current,{scaleX:0},{scrollTrigger: titleLine.current, scaleX:1,duration: .6, ease:'power2', delay: 1})
-    .fromTo(title.current,{yPercent: 100}, {scrollTrigger: title.current, yPercent: 0, duration: 1, ease: "back.out"})
-  },[])
+    tl.fromTo(titleLine.current,{scaleX:0},{scaleX:1,duration: .6, ease:'power2', delay: 1})
+    .fromTo(title.current,{yPercent: 100}, {yPercent: 0, duration: 1, ease: "back.out"})
+  },[dataTechs])
 
 
   // Shine effect tech
@@ -82,25 +83,57 @@ const ProjectLayout = () => {
           { x: shine.current.parentElement.offsetWidth + 20, duration: 1, ease: 'none'}
       )
   }
+
+  const containerListTech = useRef(null)
+  // Show tech animation
+  useEffect(() => {
+    if(!dataTechs) return
+
+    gsap.utils.toArray('.techBarContainer').forEach((container, i) => {
+      const tl = gsap.timeline({ delay: i * 0.1 })
+
+      tl
+      .to(containerListTech.current,
+        {opacity: 1}
+      )
+      .fromTo(container,
+        { width: '0', opacity: 0 },
+        { width: '100%', opacity: 1, duration: 0.5, ease: 'power2'}
+      )
+      .fromTo(container.querySelector('.logoTech'),
+        { scale: 0 },
+        { scale: 1, duration: 1, ease: 'power2' , delay: -.2},
+      )
+      .fromTo(container.querySelector('.gradientTech'),
+        { xPercent: -100 },
+        { xPercent: 0, duration: 1, ease: 'power2' , delay: -.8},
+      )
+      .fromTo(container.querySelector('.textTech'),
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: -.6 })
+    })
+}, [dataTechs])
+
   
 
   if(dataProject && dataTechs) return (
     <>
-      <main className='grid xl:grid-cols-[1fr_70%_1fr] bg-primary overflow-hidden border-b border-white-50 z-20 relative'>
+      <main className='grid xl:grid-cols-[1fr_75%_1fr] bg-primary overflow-hidden border-b border-white-50 z-20 relative'>
           <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none top-0 left-1/2 -translate-x-1/2 translate-y-[calc(-50%-200px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
           <div></div>
-          <div className='relative min-h-screen'>
+          <div className='relative min-h-screen '>
             {/* Side lines effect */}
-            <div className='relative h-full'>
+            <div className='relative h-full pb-20'>
               {/* Shiniest bar */}
               <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 left-0' style={{backgroundImage: 'var(--gradient-opacitiy-to-top)'}}></div>
               <div className='xl:opacity-100 opacity-0 w-[1px] h-full absolute top-0 right-0' style={{backgroundImage: 'var(--gradient-opacitiy-to-top)'}}></div>
               {/* Porject Content */}
-              <div className='w-[95%] h-full mx-auto pt-[70px]'>
+              <div className='w-[95%] h-full mx-auto pt-[70px] pb-[70px] md:pb-0'>
+                {/* Porject Name */}
                 <div className='overflow-hidden px-7 mt-7 relative w-fit mx-auto'><div ref={titleLine} className='line-gradient-to-right absolute bottom-0 left-0'></div><span ref={title} className='title-glow font-semibold inline-block text-nowrap text-[14vw] mt-10 md:mt-0 md:text-[14vw] xl:text-[5vw] font-sfpro skew-x-[-15deg] bg-clip-text text-transparent capitalize' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>{dataProject.name}</span></div>
-                <div className='w-full grid md:grid-cols-[40%_60%] mt-20'>
+                <div className='w-full grid md:grid-cols-[30%_70%] mt-20 gap-10 md:gap-0'>
                   {/* Tech Section */}
-                  <div>
+                  <div className='md:pr-2.5'>
                     {/* Techs Title */}
                     <div className='relative'>
                       {/* Techs Title Light */}
@@ -114,12 +147,24 @@ const ProjectLayout = () => {
                       </div>
                     </div>
                     {/* Tech List */}
-                    <div className='w-full bg-[#191919] border border-[#929292] rounded-[30px] p-1.5 mt-5 flex flex-col gap-1.5'>
-                      {dataTechs.map((tech)=> {
-                        const IconComponent = ICONS_MAP[tech.icon];
-                        return <TechBar key={tech.id} color={tech.color} techName={tech.techName} techDesc={tech.techDesc} svgIcon={<IconComponent />} />
-                      })}
+                    <div className='w-full bg-[#191919] border border-[#929292] rounded-[30px] p-1.5 mt-5'>
+                      <div ref={containerListTech} className='opacity-0 flex flex-col gap-1.5'>
+                        {dataTechs.map((tech)=> {
+                          const IconComponent = ICONS_MAP[tech.icon];
+                          return <TechBar key={tech.id} color={tech.color} techName={tech.techName} techDesc={tech.techDesc} svgIcon={<IconComponent />} />
+                        })}
+                      </div>
                     </div>
+                  </div>
+                  {/* Website Images */}
+                  <div className='md:pl-2.5'>
+                      <div className='bg-[#191919] border h-full border-[#929292] rounded-[15px] p-3 pb-10'>
+                        <div className='flex pb-3 mx-auto w-fit'>
+                          <LinkShineExternal link={dataProject.websiteUrl} label='Website' />
+                          <LinkShineExternal link={dataProject.repositoryUrl} label='Respository' />
+                        </div>
+                        <img className='w-full rounded-b-[8px]' src={`/media/images/${dataProject.image}.png`} alt="" />
+                      </div>
                   </div>
                 </div>
               </div>

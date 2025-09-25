@@ -65,7 +65,7 @@ const Footer = () => {
   return (
     <>
         <footer className='w-full h-[650px] xl:h-[400px] sticky bottom-0 bg-primary z-[10] flex flex-col overflow-hidden'>
-            <div className='grid xl:grid-cols-[1fr_70%_1fr] items-center h-full text-white font-sfpro'>
+            <div className='grid xl:grid-cols-[1fr_75%_1fr] items-center h-full text-white font-sfpro'>
                 <div className='absolute w-[70vw] h-[100vh] max-w-[1000px] max-h-[1000px] pointer-events-none bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(50%+500px)] z-50 [background:radial-gradient(circle,rgba(255,255,255,.2)_50%,rgba(255,255,255,0)_100%)] rounded-full blur-[200px]'></div>
                 <div></div>
                 <div className='flex flex-col xl:flex-row items-center justify-between w-[70%] xl:w-[95%] mx-auto h-full'>

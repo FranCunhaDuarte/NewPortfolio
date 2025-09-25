@@ -16,7 +16,7 @@ const ProjectList = () => {
     <>
         <div className='flex flex-col items-center justify-center gap-28'>
             {dataProjects.map((project) => {
-              return <Link key={project.id} to={`/project/${project.id}`}><Project color={project.color} name={project.name} image={project.image}/></Link>
+              return <Link className='relative w-full' key={project.id} to={`/project/${project.id}`}><Project color={project.color} name={project.name} image={project.image}/></Link>
             })}
         </div>
     </>

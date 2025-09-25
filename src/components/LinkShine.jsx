@@ -15,7 +15,7 @@ const LinkShine = ({link = '',label = 'Undefined', ref}) => {
         
         shineTween.current = gsap.fromTo(shine.current,
             { x: -20 },
-            { x: shine.current.parentElement.offsetWidth + 20, duration: 1, ease: 'none'}
+            { x: shine.current.parentElement.offsetWidth + 50, duration: 1, ease: 'none'}
         )
     }
 

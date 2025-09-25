@@ -115,7 +115,7 @@ const Project = ({color = 'gray', name = "undefined", image}) => {
             <div className='w-full h-full absolute top-0 left-0 transition-opacity duration-500 ease-in-out' style={ {backgroundImage: `radial-gradient(circle at 50% 0, ${pallete.bgGradient2}, #0000 100%), radial-gradient(circle at 50% 0, ${pallete.bgGradient1}, #0000 100%)`, opacity: hover ? '1' : '0'}}></div>
             <div className='w-full h-full flex flex-col p-10'>
               <div>
-                <h2 className='font-sfpro font-semibold bg-clip-text text-transparent bg-linear-to-b from-[#ffffff30] to-[#ffffff00] text-[13vw] tracking-tighter absolute top-[-30px] left-[50%] translate-x-[-50%] uppercase select-none text-nowrap'>{name}</h2>
+                <h2 className='font-sfpro font-semibold bg-clip-text text-transparent bg-linear-to-b from-[#ffffff30] to-[#ffffff00] text-[13vw] tracking-tighter absolute top-0 left-[50%] translate-x-[-50%] uppercase select-none text-nowrap'>{name}</h2>
                 <img className='absolute bottom-0 left-[50%] max-w-[85%] object-contain translate-x-[-50%] max-h-[75%] transition-all duration-500 ease-in-out' draggable={false} src={`media/images/${image}.png`} alt={name} style={{bottom: hover ? '0' : '-45px'}} />
               </div>
             </div>

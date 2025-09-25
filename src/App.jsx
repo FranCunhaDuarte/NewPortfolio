@@ -40,7 +40,6 @@ function App() {
       <div className='w-full h-full absolute top-0 left-0 z-[250] pointer-events-none bg-repeat opacity-15' style={{backgroundImage: "url(/media/images/noise.png)"}}></div>
       <Header />
       <Routes>
-
         {/* Home Page */}
         <Route path='/' element={<HomeLayout />} >
           <Route index element={<ProjectList />} />

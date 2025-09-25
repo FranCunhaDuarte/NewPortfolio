@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import LinkShineExternal from './LinkShineExternal'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
 
   const [atTop,setAtTop] = useState(true)
   const [show,setShow] = useState(true)
   const [lastScroll,setLastScroll] = useState(0)
+
+  useEffect(()=>{
+
+  },[])
+
+  const location = useLocation()
+  useEffect(() =>{
+
+    if(location.pathname.startsWith("/project/")){
+      setAtTop(true)
+      setShow(true)
+    }
+
+    
+
+  },[location])
 
   useEffect(()=>{
 
@@ -38,7 +54,7 @@ const Header = () => {
   return (
     <>
         <header className='w-full h-[75px] fixed top-0 left-0 z-30 transition-all duration-[.6s]' style={{top: show ? '0px' : '-75px'}}>
-            <div className='grid xl:grid-cols-[1fr_70%_1fr] h-full z-40 relative'>
+            <div className='grid xl:grid-cols-[1fr_75%_1fr] h-full z-40 relative'>
               <div></div>
               <div className='w-[95%] flex items-center justify-between mx-auto'>
                 <Link to={'/'}>
