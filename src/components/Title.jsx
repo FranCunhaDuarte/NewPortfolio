@@ -26,7 +26,7 @@ const Title = () => {
 
   return (
     <>
-      <div className='flex flex-col items-start mx-auto w-fit pt-20 overflow-y-hidden'>
+      <div className='flex flex-col h-full items-start mx-auto w-fit pt-20 overflow-y-hidden'>
         <div className='overflow-hidden px-7 pb-3 relative'><div ref={title1Line} className='line line-gradient-to-right top-0'></div><span ref={title1} className='title-glow inline-block xl:text-[8vw] text-[10.5vw] italic font-gloock skew-x-[-15deg] bg-clip-text text-transparent' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>Creativity Knows</span></div>
         <div className='overflow-hidden px-7 pr-10 relative'><div ref={title2Line} className='line line-gradient-to-top'></div><span ref={title2} className='title-glow inline-block xl:text-[8vw] text-[10.5vw] italic font-gloock skew-x-[-15deg] bg-clip-text text-transparent' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>No Limits</span></div>
       </div>
