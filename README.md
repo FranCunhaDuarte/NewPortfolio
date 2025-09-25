@@ -73,7 +73,7 @@ http://localhost:5173
 ## 📬 Contacto
 
 - 📧 Email: francunhaduartejobs@gmail.com  
-- 💼 LinkedIn: [linkedin.com/in/tuusuario](https://www.linkedin.com/in/francocunhaduarte/)  
+- 💼 LinkedIn: [linkedin.com/in/FranCunhaDuarte](https://www.linkedin.com/in/francocunhaduarte/)  
 - 🐙 GitHub: [github.com/FranCunhaDuarte](https://github.com/FranCunhaDuarte)  
 
 ---
