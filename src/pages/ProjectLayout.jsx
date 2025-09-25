@@ -131,7 +131,7 @@ const ProjectLayout = () => {
               <div className='w-[95%] h-full mx-auto pt-[70px] pb-[70px] md:pb-0'>
                 {/* Porject Name */}
                 <div className='overflow-hidden px-7 mt-7 relative w-fit mx-auto'><div ref={titleLine} className='line-gradient-to-right absolute bottom-0 left-0'></div><span ref={title} className='title-glow font-semibold inline-block text-nowrap text-[14vw] mt-10 md:mt-0 md:text-[14vw] xl:text-[5vw] font-sfpro skew-x-[-15deg] bg-clip-text text-transparent capitalize' style={ {backgroundImage: "var(--gradient-primarywhite)"} }>{dataProject.name}</span></div>
-                <div className='w-full grid md:grid-cols-[30%_70%] mt-20 gap-10 md:gap-0'>
+                <div className='w-full flex flex-col-reverse md:grid md:grid-cols-[30%_70%] mt-20 gap-10 md:gap-0'>
                   {/* Tech Section */}
                   <div className='md:pr-2.5'>
                     {/* Techs Title */}

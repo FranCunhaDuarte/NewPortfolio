@@ -12,6 +12,7 @@ import HomeMain from './pages/HomeLayout'
 import AboutMe from './components/AboutMe'
 import ProjectPage from './pages/ProjectLayout'
 
+
 function App() {
 
   useEffect(() => {

@@ -90,7 +90,7 @@ html {
 
 @font-face {
   font-family: "Gloock";
-  src: url("/src/assets/fonts/Gloock/Poppins.woff2") format("truetype");
+  src: url("/src/assets/fonts/Gloock/Gloock-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
